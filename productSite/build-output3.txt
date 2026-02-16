@@ -1,0 +1,336 @@
+﻿.\mvnw.cmd : 
+WARNING: A 
+terminally 
+deprecated method 
+in sun.misc.Unsafe 
+has been called
+At line:1 char:1
++ .\mvnw.cmd clean 
+compile 2>&1 | 
+Out-File -FilePath 
+"build-output3.txt 
+...
++ ~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~
+    + CategoryInfo 
+             : No  
+  tSpecified: (W   
+ ARNING: A term    
+...has been ca    
+lled:String) [    
+], RemoteExcep    
+tion
+    + FullyQualifi 
+   edErrorId : Na  
+  tiveCommandErr   
+ or
+ 
+WARNING: sun.misc.U
+nsafe::staticFieldB
+ase has been 
+called by com.googl
+e.inject.internal.a
+op.HiddenClassDefin
+er (file:/C:/Users/
+athar/.m2/wrapper/d
+ists/apache-maven-3
+.9.11/03d7e36a14098
+2eea48e22c1dcac01d8
+862b2550b2939e09a08
+09bbc5182a5bc/lib/g
+uice-5.1.0-classes.
+jar)
+WARNING: Please 
+consider reporting 
+this to the 
+maintainers of 
+class com.google.in
+ject.internal.aop.H
+iddenClassDefiner
+WARNING: sun.misc.U
+nsafe::staticFieldB
+ase will be 
+removed in a 
+future release
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------< com.yolo:productSite >------------------------
+[INFO] Building productSite 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.4.1:clean (default-clean) @ productSite ---
+[INFO] Deleting C:\Users\athar\Downloads\productSite\productSite\target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ productSite ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ productSite ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 24 source files with javac [debug parameters release 21] to target\classes
+[INFO] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/AiImageService.java: C:\Users\athar\Downloads\productSite\productSite\src\main\java\com\yolo\productSite\service\AiImageService.java uses or overrides a deprecated API.
+[INFO] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/AiImageService.java: Recompile with -Xlint:deprecation for details.
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/VectorConfig.java:[17,33] cannot access io.grpc.ManagedChannel
+  class file for io.grpc.ManagedChannel not found
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/OrderService.java:[31,14] cannot find symbol
+  symbol:   method setOrderid(java.lang.String)
+  location: variable order of type com.yolo.productSite.model.Order
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/OrderService.java:[32,14] cannot find symbol
+  symbol:   method setCustomerName(java.lang.String)
+  location: variable order of type com.yolo.productSite.model.Order
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/OrderService.java:[33,14] cannot find symbol
+  symbol:   method setEmail(java.lang.String)
+  location: variable order of type com.yolo.productSite.model.Order
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/OrderService.java:[34,14] cannot find symbol
+  symbol:   method setStatus(java.lang.String)
+  location: variable order of type com.yolo.productSite.model.Order
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/OrderService.java:[35,14] cannot find symbol
+  symbol:   method setOrderDate(java.time.LocalDate)
+  location: variable order of type com.yolo.productSite.model.Order
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/OrderService.java:[42,14] cannot find symbol
+  symbol:   method getStockQuantity()
+  location: variable p of type com.yolo.productSite.model.product
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/OrderService.java:[45,29] cannot find symbol
+  symbol:   method getStockQuantity()
+  location: variable p of type com.yolo.productSite.model.product
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/OrderService.java:[47,33] cannot find symbol
+  symbol:   method builder()
+  location: class com.yolo.productSite.model.OrderItem
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/OrderService.java:[50,49] cannot find symbol
+  symbol:   method getPrice()
+  location: variable p of type com.yolo.productSite.model.product
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/OrderService.java:[55,14] cannot find symbol
+  symbol:   method setOrderitems(java.util.List<com.yolo.productSite.model.OrderItem>)
+  location: variable order of type com.yolo.productSite.model.Order
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/OrderService.java:[59,36] cannot find symbol
+  symbol:   method getOrderitems()
+  location: variable order of type com.yolo.productSite.model.Order
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/OrderService.java:[61,25] cannot find symbol
+  symbol:   method getP()
+  location: variable item of type com.yolo.productSite.model.OrderItem
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/OrderService.java:[62,25] cannot find symbol
+  symbol:   method getQuantity()
+  location: variable item of type com.yolo.productSite.model.OrderItem
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/OrderService.java:[63,25] cannot find symbol
+  symbol:   method getTotalPrice()
+  location: variable item of type com.yolo.productSite.model.OrderItem
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/OrderService.java:[68,27] cannot find symbol
+  symbol:   method getOrderid()
+  location: variable savedOrder of type com.yolo.productSite.model.Order
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/OrderService.java:[69,27] cannot find symbol
+  symbol:   method getCustomerName()
+  location: variable savedOrder of type com.yolo.productSite.model.Order
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/OrderService.java:[70,27] cannot find symbol
+  symbol:   method getEmail()
+  location: variable savedOrder of type com.yolo.productSite.model.Order
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/OrderService.java:[71,27] cannot find symbol
+  symbol:   method getStatus()
+  location: variable savedOrder of type com.yolo.productSite.model.Order
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/OrderService.java:[72,27] cannot find symbol
+  symbol:   method getOrderDate()
+  location: variable savedOrder of type com.yolo.productSite.model.Order
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/OrderService.java:[84,36] cannot find symbol
+  symbol:   method getOrderitems()
+  location: variable order of type com.yolo.productSite.model.Order
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/OrderService.java:[86,25] cannot find symbol
+  symbol:   method getP()
+  location: variable item of type com.yolo.productSite.model.OrderItem
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/OrderService.java:[87,25] cannot find symbol
+  symbol:   method getQuantity()
+  location: variable item of type com.yolo.productSite.model.OrderItem
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/OrderService.java:[88,25] cannot find symbol
+  symbol:   method getTotalPrice()
+  location: variable item of type com.yolo.productSite.model.OrderItem
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/OrderService.java:[91,51] cannot find symbol
+  symbol:   method getId()
+  location: variable item of type com.yolo.productSite.model.OrderItem
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/OrderService.java:[94,22] cannot find symbol
+  symbol:   method getOrderid()
+  location: variable order of type com.yolo.productSite.model.Order
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/OrderService.java:[95,22] cannot find symbol
+  symbol:   method getCustomerName()
+  location: variable order of type com.yolo.productSite.model.Order
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/OrderService.java:[96,22] cannot find symbol
+  symbol:   method getEmail()
+  location: variable order of type com.yolo.productSite.model.Order
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/OrderService.java:[97,22] cannot find symbol
+  symbol:   method getStatus()
+  location: variable order of type com.yolo.productSite.model.Order
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/OrderService.java:[98,22] cannot find symbol
+  symbol:   method getOrderDate()
+  location: variable order of type com.yolo.productSite.model.Order
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/ProductService.java:[55,14] cannot find symbol
+  symbol:   method setImageName(java.lang.String)
+  location: variable p of type com.yolo.productSite.model.product
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/ProductService.java:[56,14] cannot find symbol
+  symbol:   method setImageType(java.lang.String)
+  location: variable p of type com.yolo.productSite.model.product
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/ProductService.java:[57,14] cannot find symbol
+  symbol:   method setImageData(byte[])
+  location: variable p of type com.yolo.productSite.model.product
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/ProductService.java:[127,18] cannot find symbol
+  symbol:   method getDescription()
+  location: variable p of type com.yolo.productSite.model.product
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/ProductService.java:[129,51] cannot find symbol
+  symbol:   method getId()
+  location: variable savedProduct of type com.yolo.productSite.model.product
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/ProductService.java:[130,45] cannot find symbol
+  symbol:   method getProductName()
+  location: variable savedProduct of type com.yolo.productSite.model.product
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/ProductService.java:[131,46] cannot find symbol
+  symbol:   method getPrice()
+  location: variable savedProduct of type com.yolo.productSite.model.product
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/controller/productcontroller.java:[55,27] cannot find symbol
+  symbol:   method getImageData()
+  location: variable p of type com.yolo.productSite.model.product
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/controller/productcontroller.java:[59,49] cannot find symbol
+  symbol:   method getImageType()
+  location: variable p of type com.yolo.productSite.model.product
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/controller/productcontroller.java:[60,24] cannot find symbol
+  symbol:   method getImageData()
+  location: variable p of type com.yolo.productSite.model.product
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/controller/productcontroller.java:[68,10] cannot find symbol
+  symbol:   method setId(int)
+  location: variable p of type com.yolo.productSite.model.product
+[INFO] 41 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  5.254 s
+[INFO] Finished at: 2026-02-05T01:08:38+05:30
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.14.1:compile (default-compile) on project productSite: Compilation failure: Compilation failure: 
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/VectorConfig.java:[17,33] cannot access io.grpc.ManagedChannel
+[ERROR]   class file for io.grpc.ManagedChannel not found
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/OrderService.java:[31,14] cannot find symbol
+[ERROR]   symbol:   method setOrderid(java.lang.String)
+[ERROR]   location: variable order of type com.yolo.productSite.model.Order
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/OrderService.java:[32,14] cannot find symbol
+[ERROR]   symbol:   method setCustomerName(java.lang.String)
+[ERROR]   location: variable order of type com.yolo.productSite.model.Order
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/OrderService.java:[33,14] cannot find symbol
+[ERROR]   symbol:   method setEmail(java.lang.String)
+[ERROR]   location: variable order of type com.yolo.productSite.model.Order
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/OrderService.java:[34,14] cannot find symbol
+[ERROR]   symbol:   method setStatus(java.lang.String)
+[ERROR]   location: variable order of type com.yolo.productSite.model.Order
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/OrderService.java:[35,14] cannot find symbol
+[ERROR]   symbol:   method setOrderDate(java.time.LocalDate)
+[ERROR]   location: variable order of type com.yolo.productSite.model.Order
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/OrderService.java:[42,14] cannot find symbol
+[ERROR]   symbol:   method getStockQuantity()
+[ERROR]   location: variable p of type com.yolo.productSite.model.product
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/OrderService.java:[45,29] cannot find symbol
+[ERROR]   symbol:   method getStockQuantity()
+[ERROR]   location: variable p of type com.yolo.productSite.model.product
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/OrderService.java:[47,33] cannot find symbol
+[ERROR]   symbol:   method builder()
+[ERROR]   location: class com.yolo.productSite.model.OrderItem
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/OrderService.java:[50,49] cannot find symbol
+[ERROR]   symbol:   method getPrice()
+[ERROR]   location: variable p of type com.yolo.productSite.model.product
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/OrderService.java:[55,14] cannot find symbol
+[ERROR]   symbol:   method setOrderitems(java.util.List<com.yolo.productSite.model.OrderItem>)
+[ERROR]   location: variable order of type com.yolo.productSite.model.Order
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/OrderService.java:[59,36] cannot find symbol
+[ERROR]   symbol:   method getOrderitems()
+[ERROR]   location: variable order of type com.yolo.productSite.model.Order
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/OrderService.java:[61,25] cannot find symbol
+[ERROR]   symbol:   method getP()
+[ERROR]   location: variable item of type com.yolo.productSite.model.OrderItem
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/OrderService.java:[62,25] cannot find symbol
+[ERROR]   symbol:   method getQuantity()
+[ERROR]   location: variable item of type com.yolo.productSite.model.OrderItem
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/OrderService.java:[63,25] cannot find symbol
+[ERROR]   symbol:   method getTotalPrice()
+[ERROR]   location: variable item of type com.yolo.productSite.model.OrderItem
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/OrderService.java:[68,27] cannot find symbol
+[ERROR]   symbol:   method getOrderid()
+[ERROR]   location: variable savedOrder of type com.yolo.productSite.model.Order
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/OrderService.java:[69,27] cannot find symbol
+[ERROR]   symbol:   method getCustomerName()
+[ERROR]   location: variable savedOrder of type com.yolo.productSite.model.Order
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/OrderService.java:[70,27] cannot find symbol
+[ERROR]   symbol:   method getEmail()
+[ERROR]   location: variable savedOrder of type com.yolo.productSite.model.Order
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/OrderService.java:[71,27] cannot find symbol
+[ERROR]   symbol:   method getStatus()
+[ERROR]   location: variable savedOrder of type com.yolo.productSite.model.Order
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/OrderService.java:[72,27] cannot find symbol
+[ERROR]   symbol:   method getOrderDate()
+[ERROR]   location: variable savedOrder of type com.yolo.productSite.model.Order
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/OrderService.java:[84,36] cannot find symbol
+[ERROR]   symbol:   method getOrderitems()
+[ERROR]   location: variable order of type com.yolo.productSite.model.Order
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/OrderService.java:[86,25] cannot find symbol
+[ERROR]   symbol:   method getP()
+[ERROR]   location: variable item of type com.yolo.productSite.model.OrderItem
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/OrderService.java:[87,25] cannot find symbol
+[ERROR]   symbol:   method getQuantity()
+[ERROR]   location: variable item of type com.yolo.productSite.model.OrderItem
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/OrderService.java:[88,25] cannot find symbol
+[ERROR]   symbol:   method getTotalPrice()
+[ERROR]   location: variable item of type com.yolo.productSite.model.OrderItem
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/OrderService.java:[91,51] cannot find symbol
+[ERROR]   symbol:   method getId()
+[ERROR]   location: variable item of type com.yolo.productSite.model.OrderItem
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/OrderService.java:[94,22] cannot find symbol
+[ERROR]   symbol:   method getOrderid()
+[ERROR]   location: variable order of type com.yolo.productSite.model.Order
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/OrderService.java:[95,22] cannot find symbol
+[ERROR]   symbol:   method getCustomerName()
+[ERROR]   location: variable order of type com.yolo.productSite.model.Order
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/OrderService.java:[96,22] cannot find symbol
+[ERROR]   symbol:   method getEmail()
+[ERROR]   location: variable order of type com.yolo.productSite.model.Order
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/OrderService.java:[97,22] cannot find symbol
+[ERROR]   symbol:   method getStatus()
+[ERROR]   location: variable order of type com.yolo.productSite.model.Order
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/OrderService.java:[98,22] cannot find symbol
+[ERROR]   symbol:   method getOrderDate()
+[ERROR]   location: variable order of type com.yolo.productSite.model.Order
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/ProductService.java:[55,14] cannot find symbol
+[ERROR]   symbol:   method setImageName(java.lang.String)
+[ERROR]   location: variable p of type com.yolo.productSite.model.product
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/ProductService.java:[56,14] cannot find symbol
+[ERROR]   symbol:   method setImageType(java.lang.String)
+[ERROR]   location: variable p of type com.yolo.productSite.model.product
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/ProductService.java:[57,14] cannot find symbol
+[ERROR]   symbol:   method setImageData(byte[])
+[ERROR]   location: variable p of type com.yolo.productSite.model.product
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/ProductService.java:[127,18] cannot find symbol
+[ERROR]   symbol:   method getDescription()
+[ERROR]   location: variable p of type com.yolo.productSite.model.product
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/ProductService.java:[129,51] cannot find symbol
+[ERROR]   symbol:   method getId()
+[ERROR]   location: variable savedProduct of type com.yolo.productSite.model.product
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/ProductService.java:[130,45] cannot find symbol
+[ERROR]   symbol:   method getProductName()
+[ERROR]   location: variable savedProduct of type com.yolo.productSite.model.product
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/service/ProductService.java:[131,46] cannot find symbol
+[ERROR]   symbol:   method getPrice()
+[ERROR]   location: variable savedProduct of type com.yolo.productSite.model.product
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/controller/productcontroller.java:[55,27] cannot find symbol
+[ERROR]   symbol:   method getImageData()
+[ERROR]   location: variable p of type com.yolo.productSite.model.product
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/controller/productcontroller.java:[59,49] cannot find symbol
+[ERROR]   symbol:   method getImageType()
+[ERROR]   location: variable p of type com.yolo.productSite.model.product
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/controller/productcontroller.java:[60,24] cannot find symbol
+[ERROR]   symbol:   method getImageData()
+[ERROR]   location: variable p of type com.yolo.productSite.model.product
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/controller/productcontroller.java:[68,10] cannot find symbol
+[ERROR]   symbol:   method setId(int)
+[ERROR]   location: variable p of type com.yolo.productSite.model.product
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

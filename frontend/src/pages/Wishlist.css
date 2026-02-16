@@ -1,0 +1,25 @@
+.wishlist-page {
+  max-width: 1200px;
+}
+
+.wishlist-page .page-title {
+  margin-bottom: 1.5rem;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.loading,
+.error,
+.empty {
+  text-align: center;
+  color: var(--text-muted);
+  margin: 2rem 0;
+}
+
+.error {
+  color: #c03939;
+}

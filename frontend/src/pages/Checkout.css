@@ -1,0 +1,84 @@
+.checkout-page {
+  max-width: 480px;
+}
+
+.checkout-page .page-title {
+  margin-bottom: 1.5rem;
+}
+
+.empty-cart {
+  color: var(--text-muted);
+  margin: 2rem 0 1rem;
+}
+
+.checkout-form {
+  padding: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.35rem;
+  font-size: 0.95rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.65rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  background: var(--surface);
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent-light);
+}
+
+.order-summary {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: var(--bg);
+  border-radius: var(--radius-sm);
+}
+
+.order-summary h3 {
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.order-summary ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.order-summary li {
+  margin-bottom: 0.35rem;
+}
+
+.order-total {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--accent);
+  margin: 0.75rem 0 0;
+}
+
+.form-error {
+  color: #c03939;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.btn-block {
+  width: 100%;
+  margin-top: 0.5rem;
+}

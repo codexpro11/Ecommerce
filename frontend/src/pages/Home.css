@@ -1,0 +1,59 @@
+.hero {
+  background: linear-gradient(135deg, var(--accent-light) 0%, var(--gold-light) 100%);
+  padding: 3.5rem 0;
+  text-align: center;
+  border-radius: 0 0 var(--radius) var(--radius);
+}
+
+.hero-inner {
+  max-width: 640px;
+}
+
+.hero-title {
+  font-size: 2.25rem;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+
+.hero-subtitle {
+  color: var(--text-muted);
+  margin: 0 0 1.5rem;
+  font-size: 1.05rem;
+}
+
+.hero-cta {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+}
+
+.section {
+  padding: 2.5rem 0;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--text);
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.loading,
+.error {
+  text-align: center;
+  color: var(--text-muted);
+  margin: 2rem 0;
+}
+
+.error {
+  color: #c03939;
+}
+
+.section-cta {
+  text-align: center;
+  margin-top: 2rem;
+}
