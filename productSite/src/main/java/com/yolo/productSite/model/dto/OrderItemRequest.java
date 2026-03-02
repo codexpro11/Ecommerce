@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public record OrderItemRequest(
       @JsonProperty("productId") int productId,
-        @JsonProperty("quality") int quantity
+        @JsonProperty("quantity") int quantity
 ) {
     @JsonCreator
     public OrderItemRequest {}

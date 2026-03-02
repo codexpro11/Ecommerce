@@ -6,6 +6,7 @@ import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.document.Document;
 import org.springframework.ai.vectorstore.VectorStore;
 import org.springframework.ai.vectorstore.SearchRequest;
+import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -179,24 +180,42 @@ public class ProductService {
                 .collect(Collectors.toList());
     }
 
+    // Auto-sync all products into Qdrant on every app startup
+    @PostConstruct
+    public void syncOnStartup() {
+        try {
+            System.out.println(">>> [ProductService] Syncing all products to vector store on startup...");
+            List<product> synced = SyncAllProductsToVectorStore();
+            System.out.println(">>> [ProductService] Successfully indexed " + synced.size() + " products into Qdrant.");
+        } catch (Exception e) {
+            System.err.println(">>> [ProductService] Failed to sync products to vector store: " + e.getMessage());
+        }
+    }
+
     // method to sync existing products to qdrant database
     @Transactional
     public List<product> SyncAllProductsToVectorStore()
     {
         List<product> allProducts=productRepo.findAll();
-        List<Document> documents = allProducts.stream().map(p->{String contentToEmbed=String.format("Product:%s,Brand: %s, Category: %s, Description: %s, Price: %.2f",
-                p.getBrand()!=null?p.getBrand():"",
-                p.getDescription(),
-                p.getCategory(),
-                p.getProductName(),
-                (double) p.getPrice());
-        return new Document(contentToEmbed,Map.of("type", "product",
-                "product_id", String.valueOf(p.getId()),
-                "name", p.getProductName(),
-                "brand", p.getBrand() != null ? p.getBrand() : "",
-                "category", p.getCategory() != null ? p.getCategory() : "",
-                "price", String.valueOf(p.getPrice())
-        ));}).collect(Collectors.toList());
+        List<Document> documents = allProducts.stream().map(p -> {
+            String contentToEmbed = String.format(
+                    "Product: %s, Brand: %s, Category: %s, Description: %s, Price: %.2f, Stock: %d, Available: %s",
+                    p.getProductName(),
+                    p.getBrand() != null ? p.getBrand() : "",
+                    p.getCategory() != null ? p.getCategory() : "",
+                    p.getDescription() != null ? p.getDescription() : "",
+                    (double) p.getPrice(),
+                    p.getStockQuantity(),
+                    p.isProductAvailable() ? "Yes" : "No");
+            return new Document(contentToEmbed, Map.of(
+                    "type", "product",
+                    "product_id", String.valueOf(p.getId()),
+                    "name", p.getProductName(),
+                    "brand", p.getBrand() != null ? p.getBrand() : "",
+                    "category", p.getCategory() != null ? p.getCategory() : "",
+                    "price", String.valueOf(p.getPrice())
+            ));
+        }).collect(Collectors.toList());
         vectorStore.add(documents);
         return allProducts;
     }

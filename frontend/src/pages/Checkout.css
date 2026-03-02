@@ -1,81 +1,109 @@
 .checkout-page {
-  max-width: 480px;
+  max-width: 520px;
+  animation: fadeInUp 0.4s ease-out;
 }
 
 .checkout-page .page-title {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.75rem;
 }
 
-.empty-cart {
+.checkout-page .empty-cart {
   color: var(--text-muted);
-  margin: 2rem 0 1rem;
+  margin: 2.5rem 0 1.5rem;
 }
 
+/* ─── Form ─── */
 .checkout-form {
-  padding: 1.5rem;
+  padding: 2rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
 }
 
 .form-group {
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
 }
 
 .form-group label {
   display: block;
-  font-weight: 500;
-  margin-bottom: 0.35rem;
-  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  font-size: 0.92rem;
+  color: var(--text-secondary);
 }
 
 .form-group input {
   width: 100%;
-  padding: 0.65rem 1rem;
-  border: 1px solid var(--border);
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-light);
   border-radius: var(--radius-sm);
-  font-size: 1rem;
-  background: var(--surface);
+  font-size: 0.95rem;
+  background: var(--bg-secondary);
+  color: var(--text);
+  transition: all var(--transition);
+}
+
+.form-group input::placeholder {
+  color: var(--text-muted);
 }
 
 .form-group input:focus {
   outline: none;
   border-color: var(--accent);
-  box-shadow: 0 0 0 2px var(--accent-light);
+  box-shadow: 0 0 0 3px var(--accent-light);
+  background: var(--surface-hover);
 }
 
+/* ─── Order Summary ─── */
 .order-summary {
-  margin: 1.5rem 0;
-  padding: 1rem;
-  background: var(--bg);
+  margin: 1.75rem 0;
+  padding: 1.25rem;
+  background: var(--bg-secondary);
   border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
 }
 
 .order-summary h3 {
-  font-size: 1rem;
-  margin-bottom: 0.75rem;
+  font-size: 1.05rem;
+  margin-bottom: 0.85rem;
+  color: var(--text);
 }
 
 .order-summary ul {
   margin: 0;
   padding: 0;
   list-style: none;
-  font-size: 0.95rem;
-  color: var(--text-muted);
+  font-size: 0.92rem;
+  color: var(--text-secondary);
 }
 
 .order-summary li {
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.4rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.order-summary li:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 .order-total {
-  font-weight: 600;
-  font-size: 1.1rem;
-  color: var(--accent);
-  margin: 0.75rem 0 0;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--accent-hover);
+  margin: 1rem 0 0;
+  font-family: var(--font-head);
 }
 
 .form-error {
-  color: #c03939;
-  font-size: 0.9rem;
+  color: var(--danger);
+  font-size: 0.88rem;
   margin-bottom: 1rem;
+  padding: 0.6rem 0.85rem;
+  background: var(--danger-light);
+  border-radius: var(--radius-xs);
 }
 
 .btn-block {

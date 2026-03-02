@@ -1,48 +1,80 @@
 .products-page {
-  max-width: 1200px;
+  max-width: 1280px;
 }
 
-.page-title {
-  font-size: 1.75rem;
-  margin-bottom: 1.5rem;
+.products-page .page-title {
+  margin-bottom: 0.5rem;
 }
 
+.products-subtitle {
+  color: var(--text-muted);
+  margin: 0 0 2rem;
+  font-size: 0.95rem;
+}
+
+/* ─── Search ─── */
 .search-form {
   display: flex;
   gap: 0.75rem;
-  margin-bottom: 2rem;
-  max-width: 420px;
+  margin-bottom: 2.5rem;
+  max-width: 520px;
 }
 
 .search-input {
   flex: 1;
-  padding: 0.65rem 1rem;
-  border: 1px solid var(--border);
+  padding: 0.75rem 1.15rem;
+  border: 1px solid var(--border-light);
   border-radius: var(--radius-sm);
-  font-size: 1rem;
+  font-size: 0.95rem;
   background: var(--surface);
+  color: var(--text);
+  transition: all var(--transition);
+}
+
+.search-input::placeholder {
+  color: var(--text-muted);
 }
 
 .search-input:focus {
   outline: none;
   border-color: var(--accent);
-  box-shadow: 0 0 0 2px var(--accent-light);
+  box-shadow: 0 0 0 3px var(--accent-light), var(--shadow-glow);
+  background: var(--surface-hover);
 }
 
+/* ─── Product Grid ─── */
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 1.5rem;
 }
 
+/* ─── States ─── */
 .loading,
 .error,
 .empty {
   text-align: center;
   color: var(--text-muted);
-  margin: 2rem 0;
+  margin: 3rem 0;
 }
 
 .error {
-  color: #c03939;
+  color: var(--danger);
+}
+
+.empty {
+  padding: 3rem 0;
+  font-size: 1.05rem;
+}
+
+@media (max-width: 768px) {
+  .search-form {
+    max-width: 100%;
+    flex-direction: column;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+  }
 }
