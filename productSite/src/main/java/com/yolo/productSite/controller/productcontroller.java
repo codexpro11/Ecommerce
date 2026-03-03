@@ -13,7 +13,6 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
-@CrossOrigin(origins = "http://localhost:5173")
 @RestController
 @RequestMapping("/api")
 public class productcontroller {
@@ -89,14 +88,13 @@ public class productcontroller {
         return ResponseEntity.ok(
                 productService.findByProductNameContaining(keyword));
     }
+
     // adding product in json format
     @PostMapping
-    public ResponseEntity<List<product>> Json(@RequestBody List<product> products)
-    {
+    public ResponseEntity<List<product>> Json(@RequestBody List<product> products) {
         List<product> savedProducts = productService.addProductJson(products);
-        return new ResponseEntity<>(savedProducts,HttpStatus.OK);
+        return new ResponseEntity<>(savedProducts, HttpStatus.OK);
     }
-
 
     @PostMapping("/product/generate-description")
     public ResponseEntity<String> generateDescription(@RequestParam String productName, @RequestParam String category) {
@@ -118,6 +116,7 @@ public class productcontroller {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
     @PostMapping("/product/generate-product")
     public ResponseEntity<product> generateProduct(@RequestParam String query) {
         try {
@@ -127,11 +126,9 @@ public class productcontroller {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-    //bulk image upload
-    @PostMapping(
-            value = "/products/images/bulk",
-            consumes = MediaType.MULTIPART_FORM_DATA_VALUE
-    )
+
+    // bulk image upload
+    @PostMapping(value = "/products/images/bulk", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public ResponseEntity<String> uploadImagesBulk(
             @RequestParam Map<String, MultipartFile> files) {
 

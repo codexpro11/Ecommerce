@@ -9,7 +9,6 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@CrossOrigin("http://localhost:5173") //
 @RequestMapping("/api/wishlist")
 public class WishListController {
 
@@ -23,8 +22,7 @@ public class WishListController {
     @PostMapping("/toggle")
     public ResponseEntity<String> toggleWishlist(@RequestBody WishList item) {
 
-        Optional<WishList> existingItem =
-                wishListRepo.findByProductId(item.getProductId());
+        Optional<WishList> existingItem = wishListRepo.findByProductId(item.getProductId());
 
         if (existingItem.isPresent()) {
             wishListRepo.delete(existingItem.get());
@@ -38,15 +36,16 @@ public class WishListController {
         wishListRepo.save(newItem);
 
         return ResponseEntity.ok("added");
-}
+    }
+
     // Keep this to load the wishlist page
     @GetMapping("/")
     public List<WishList> getAllWishlist() {
         return wishListRepo.findAll();
     }
+
     @DeleteMapping("/remove/{id}")
-    public ResponseEntity<String> deleteWishlist(@PathVariable String id)
-    {
+    public ResponseEntity<String> deleteWishlist(@PathVariable String id) {
         wishListRepo.deleteById(Long.valueOf(id));
         return ResponseEntity.ok("Deleted");
     }
