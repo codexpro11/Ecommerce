@@ -1,0 +1,12 @@
+{
+    "$schema": "https://railway.com/railway.schema.json",
+    "build": {
+        "builder": "RAILPACK",
+        "buildCommand": "cd productSite && chmod +x mvnw && ./mvnw clean package -DskipTests"
+    },
+    "deploy": {
+        "startCommand": "java -jar productSite/target/productSite-0.0.1-SNAPSHOT.jar",
+        "restartPolicyType": "ON_FAILURE",
+        "restartPolicyMaxRetries": 10
+    }
+}
