@@ -1,0 +1,42 @@
+# Vercel Speed Insights Implementation
+
+## Summary
+Successfully implemented Vercel Speed Insights for the React-based ecommerce application to enable real-time performance monitoring.
+
+## Changes Made
+
+### 1. Installed Dependencies
+- Added `@vercel/speed-insights` package (v1.3.1) to project dependencies
+- Updated package-lock.json to reflect the new dependency and its sub-dependencies
+
+### 2. Modified Files
+- **src/App.jsx**: Added SpeedInsights component integration
+  - Imported `SpeedInsights` from `@vercel/speed-insights/react`
+  - Added `<SpeedInsights />` component inside the BrowserRouter, after the Layout component
+  - This ensures Speed Insights tracks all routes and page transitions in the React Router application
+
+## Implementation Details
+
+The SpeedInsights component was placed strategically inside the BrowserRouter context so it can properly track route changes and performance metrics across the entire application. It's positioned after the Layout component to ensure it doesn't interfere with the main application rendering while still being able to monitor all user interactions.
+
+## Framework Context
+This is a React application built with Vite, using React Router for navigation. The implementation follows the official Vercel documentation for React applications (similar to create-react-app setup).
+
+## Verification Steps Completed
+1. ✅ Package installation completed successfully
+2. ✅ Build verified - application builds without errors
+3. ✅ Linting verified - no new linting errors introduced in modified files
+4. ✅ Component integration follows React best practices
+
+## Next Steps for User
+Once deployed to Vercel:
+1. Enable Speed Insights in the Vercel dashboard (Project > Speed Insights tab)
+2. The Speed Insights script will be automatically injected at `/_vercel/speed-insights/script.js`
+3. Performance metrics will begin appearing in the Vercel dashboard after users visit the site
+4. Data will be available in the Speed Insights tab of the Vercel dashboard
+
+## Technical Notes
+- The SpeedInsights component is a lightweight wrapper that only loads the tracking script
+- It automatically handles route tracking in React Router applications
+- No additional configuration is required for basic usage
+- The component is positioned to work seamlessly with the existing CartProvider and BrowserRouter structure
