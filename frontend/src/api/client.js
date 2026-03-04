@@ -37,6 +37,21 @@ export async function addProduct(product, imageFile) {
   return res.json();
 }
 
+export async function updateProduct(id, product, imageFile) {
+  const formData = new FormData();
+  formData.append('product', new Blob([JSON.stringify(product)], { type: 'application/json' }));
+  if (imageFile) formData.append('imageFile', imageFile);
+  const res = await fetch(`${API_BASE}/product/${id}`, {
+    method: 'PUT',
+    body: formData,
+  });
+  if (!res.ok) {
+    const text = await res.text();
+    throw new Error(text || 'Failed to update product');
+  }
+  return res.json();
+}
+
 export async function getWishlist() {
   const res = await fetch(`${API_BASE}/wishlist/`);
   if (!res.ok) throw new Error('Failed to fetch wishlist');

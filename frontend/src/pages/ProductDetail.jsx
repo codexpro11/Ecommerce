@@ -86,6 +86,9 @@ export default function ProductDetail() {
             >
               {inWishlist ? '♥ In wishlist' : '♥ Add to wishlist'}
             </button>
+            <Link to={`/update-product/${product.id}`} className="btn btn-secondary">
+              ✏️ Edit product
+            </Link>
           </div>
         </div>
       </div>
