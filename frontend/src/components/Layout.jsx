@@ -13,6 +13,7 @@ export default function Layout({ children }) {
     { to: '/products', label: 'Products' },
     { to: '/add-product', label: 'Add Product' },
     { to: '/wishlist', label: 'Wishlist' },
+    { to: '/orders', label: 'Orders' },
   ];
 
   return (

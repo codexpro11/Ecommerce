@@ -9,6 +9,7 @@ import Checkout from './pages/Checkout';
 import Wishlist from './pages/Wishlist';
 import AddProduct from './pages/AddProduct';
 import UpdateProduct from './pages/UpdateProduct';
+import Orders from './pages/Orders';
 import './index.css';
 
 export default function App() {
@@ -25,6 +26,7 @@ export default function App() {
             <Route path="/cart" element={<Cart />} />
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/wishlist" element={<Wishlist />} />
+            <Route path="/orders" element={<Orders />} />
           </Routes>
         </Layout>
       </BrowserRouter>
