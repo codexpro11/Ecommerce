@@ -20,7 +20,15 @@ export default function ProductCard({ product, onWishlistToggle, inWishlist }) {
       <Link to={`/product/${product.id}`} className="product-card-link">
         <div className="product-card-image-wrap">
           {imageUrl ? (
-            <img src={imageUrl} alt={product.productName} className="product-card-image" />
+            <img
+              src={imageUrl}
+              alt={product.productName}
+              className="product-card-image"
+              onError={(e) => {
+                e.target.style.display = 'none';
+                e.target.parentElement.insertAdjacentHTML('afterbegin', '<div class="product-card-placeholder">No image</div>');
+              }}
+            />
           ) : (
             <div className="product-card-placeholder">No image</div>
           )}

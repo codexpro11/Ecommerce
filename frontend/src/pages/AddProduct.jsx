@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { addProduct, generateDescription, generateImage } from '../api/client';
 import './AddProduct.css';
@@ -18,8 +18,16 @@ export default function AddProduct() {
     brand: '',
   });
   const [imageFile, setImageFile] = useState(null);
+  const [imagePreview, setImagePreview] = useState(null);
   const [descLoading, setDescLoading] = useState(false);
   const [imageLoading, setImageLoading] = useState(false);
+
+  // Revoke object URL when preview changes or component unmounts
+  useEffect(() => {
+    return () => {
+      if (imagePreview) URL.revokeObjectURL(imagePreview);
+    };
+  }, [imagePreview]);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -61,6 +69,7 @@ export default function AddProduct() {
       );
       const file = new File([blob], 'ai-generated.png', { type: blob.type || 'image/png' });
       setImageFile(file);
+      setImagePreview(URL.createObjectURL(file));
     } catch (e) {
       setError(e.message);
     } finally {
@@ -217,7 +226,11 @@ export default function AddProduct() {
               name="imageFile"
               type="file"
               accept="image/*"
-              onChange={(e) => setImageFile(e.target.files?.[0] || null)}
+              onChange={(e) => {
+                const file = e.target.files?.[0] || null;
+                setImageFile(file);
+                setImagePreview(file ? URL.createObjectURL(file) : null);
+              }}
             />
             <button
               type="button"
@@ -228,7 +241,20 @@ export default function AddProduct() {
               {imageLoading ? 'Generating…' : '🖼️ Generate image with AI'}
             </button>
           </div>
-          {imageFile && <span className="file-name">{imageFile.name}</span>}
+          {imagePreview && (
+            <div className="image-preview-wrapper">
+              <img src={imagePreview} alt="Product preview" className="image-preview" />
+              <button
+                type="button"
+                className="image-preview-remove"
+                onClick={() => { setImageFile(null); setImagePreview(null); }}
+                aria-label="Remove image"
+              >
+                ✕
+              </button>
+            </div>
+          )}
+          {imageFile && !imagePreview && <span className="file-name">{imageFile.name}</span>}
         </div>
 
         {error && <p className="form-error">{error}</p>}

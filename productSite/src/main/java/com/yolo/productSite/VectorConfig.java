@@ -8,17 +8,19 @@ import org.springframework.ai.vectorstore.VectorStore;
 import org.springframework.ai.vectorstore.qdrant.QdrantVectorStore;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 
 @Configuration
+@Profile("!test")
 public class VectorConfig {
     private static final int VECTOR_SIZE = 768;
 
     @Bean
     public QdrantClient qdrantClient() {
         QdrantGrpcClient.Builder grpcClientBuilder = QdrantGrpcClient.newBuilder(
-                "4dabe06b-d700-4f00-85d3-684153d3476b.europe-west3-0.gcp.cloud.qdrant.io",
+                "localhost",
                 6334,   // gRPC port (Spring AI uses this)
-                true).withApiKey("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2Nlc3MiOiJtIn0.wgHEcnLn2csBb4tTriVCP-Eo0yfPiwuKaBXtK7_clN0");
+                false);
         return new QdrantClient(grpcClientBuilder.build());
     }
 

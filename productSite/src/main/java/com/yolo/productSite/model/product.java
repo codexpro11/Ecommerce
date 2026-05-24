@@ -33,7 +33,6 @@ public class product {
     private String brand;
 
     @Lob
-    @Column(columnDefinition = "LONGBLOB")
     private byte[] imageData;
 
     public product(int id) {
