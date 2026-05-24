@@ -8,6 +8,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 public class CrossConfig
 {
+     @Value("${allowed.origins:https://ecommerce-beta-ochre.vercel.app/,http://localhost:5173,http://localhost:5174}")
+    private String[] allowedOrigins;
     @Bean
         public WebMvcConfigurer corsConfigurer(){
             return new WebMvcConfigurer(){
