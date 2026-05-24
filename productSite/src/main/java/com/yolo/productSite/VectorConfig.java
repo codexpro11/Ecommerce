@@ -18,7 +18,7 @@ public class VectorConfig {
     @Bean
     public QdrantClient qdrantClient() {
         QdrantGrpcClient.Builder grpcClientBuilder = QdrantGrpcClient.newBuilder(
-                "localhost",
+                "qdrant.railway.internal",
                 6334,   // gRPC port (Spring AI uses this)
                 false);
         return new QdrantClient(grpcClientBuilder.build());
