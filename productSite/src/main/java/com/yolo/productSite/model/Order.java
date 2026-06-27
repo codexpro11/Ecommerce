@@ -46,6 +46,7 @@ public class Order {
     )
     @ToString.Exclude  // Prevent circular reference in toString
     @EqualsAndHashCode.Exclude  // Prevent circular reference in equals/hashCode
+    @Builder.Default
     private List<OrderItem> orderitems = new ArrayList<>();
 
     /**

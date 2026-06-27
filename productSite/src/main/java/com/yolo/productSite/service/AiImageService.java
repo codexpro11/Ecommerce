@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import java.io.IOException;
 import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.Base64;
 
 @Service
@@ -35,7 +34,7 @@ public class AiImageService {
         String imageUrl = response.getResult().getOutput().getUrl();
         if (imageUrl != null) {
             try {
-                return new URL(imageUrl).openStream().readAllBytes();
+                return java.net.URI.create(imageUrl).toURL().openStream().readAllBytes();
             } catch (IOException e) {
                 throw new RuntimeException("Failed to download image from URL", e);
             }
