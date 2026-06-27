@@ -1,0 +1,96 @@
+﻿.\mvnw.cmd : 
+WARNING: A 
+terminally 
+deprecated method 
+in sun.misc.Unsafe 
+has been called
+At line:1 char:1
++ .\mvnw.cmd clean 
+compile 2>&1 | 
+Out-File -FilePath 
+"build-output2.txt 
+...
++ ~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~
+    + CategoryInfo 
+             : No  
+  tSpecified: (W   
+ ARNING: A term    
+...has been ca    
+lled:String) [    
+], RemoteExcep    
+tion
+    + FullyQualifi 
+   edErrorId : Na  
+  tiveCommandErr   
+ or
+ 
+WARNING: sun.misc.U
+nsafe::staticFieldB
+ase has been 
+called by com.googl
+e.inject.internal.a
+op.HiddenClassDefin
+er (file:/C:/Users/
+athar/.m2/wrapper/d
+ists/apache-maven-3
+.9.11/03d7e36a14098
+2eea48e22c1dcac01d8
+862b2550b2939e09a08
+09bbc5182a5bc/lib/g
+uice-5.1.0-classes.
+jar)
+WARNING: Please 
+consider reporting 
+this to the 
+maintainers of 
+class com.google.in
+ject.internal.aop.H
+iddenClassDefiner
+WARNING: sun.misc.U
+nsafe::staticFieldB
+ase will be 
+removed in a 
+future release
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------< com.yolo:productSite >------------------------
+[INFO] Building productSite 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.4.1:clean (default-clean) @ productSite ---
+[INFO] Deleting C:\Users\athar\Downloads\productSite\productSite\target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ productSite ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ productSite ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 23 source files with javac [debug parameters release 21] to target\classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/VectorConfig.java:[8,26] '{' expected
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/VectorConfig.java:[17,9] statements not expected outside of methods and initializers
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/VectorConfig.java:[19,1] class, interface, enum, or record expected
+[INFO] 3 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  5.417 s
+[INFO] Finished at: 2026-02-05T00:48:12+05:30
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.14.1:compile (default-compile) on project productSite: Compilation failure: Compilation failure: 
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/VectorConfig.java:[8,26] '{' expected
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/VectorConfig.java:[17,9] statements not expected outside of methods and initializers
+[ERROR] /C:/Users/athar/Downloads/productSite/productSite/src/main/java/com/yolo/productSite/VectorConfig.java:[19,1] class, interface, enum, or record expected
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

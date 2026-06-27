@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: product-postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: atharva11
+      POSTGRES_DB: productdb
+    ports:
+      - "5433:5432" # Mapped to 5433 to avoid conflicts!
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  qdrant:
+    image: qdrant/qdrant:latest
+    container_name: product-qdrant
+    ports:
+      - "6333:6333"
+      - "6334:6334"
+    volumes:
+      - qdrant_data:/qdrant/storage
+    restart: unless-stopped
+
+# This is the section Docker was complaining about!
+volumes:
+  pgdata:          # <-- This must exactly match the name used above
+  qdrant_data:

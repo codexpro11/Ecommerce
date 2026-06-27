@@ -1,0 +1,193 @@
+.add-product-page {
+  max-width: 680px;
+  animation: fadeInUp 0.4s ease-out;
+}
+
+.add-product-page .page-title {
+  margin-bottom: 0.5rem;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-bottom: 1.75rem;
+  color: var(--accent-hover);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all var(--transition);
+}
+
+.back-link:hover {
+  color: var(--accent);
+  transform: translateX(-3px);
+}
+
+/* ─── Form ─── */
+.add-product-form {
+  padding: 2rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="date"],
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  background: var(--bg-secondary);
+  color: var(--text);
+  transition: all var(--transition);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-light);
+  background: var(--surface-hover);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 5rem;
+}
+
+.form-group-with-action {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.btn-sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.88rem;
+  align-self: flex-start;
+}
+
+.ai-btn {
+  white-space: nowrap;
+  background: linear-gradient(135deg, var(--gold-light), rgba(124, 92, 252, 0.08));
+  border: 1px solid rgba(240, 178, 50, 0.25);
+  color: var(--gold);
+}
+
+.ai-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, rgba(240, 178, 50, 0.2), rgba(124, 92, 252, 0.12));
+  border-color: rgba(240, 178, 50, 0.4);
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  font-weight: 400;
+  color: var(--text-secondary);
+  padding-top: 1.5rem;
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: 1.15rem;
+  height: 1.15rem;
+  accent-color: var(--accent);
+}
+
+.form-group input[type="file"] {
+  width: 100%;
+  padding: 0.6rem 0;
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+}
+
+.file-name {
+  display: block;
+  margin-top: 0.4rem;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.form-error {
+  color: var(--danger);
+  font-size: 0.88rem;
+  margin-bottom: 1rem;
+  padding: 0.6rem 0.85rem;
+  background: var(--danger-light);
+  border-radius: var(--radius-xs);
+}
+
+.add-product-form .btn-primary {
+  margin-top: 0.5rem;
+}
+
+/* ─── Image Preview ─── */
+.image-preview-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-top: 0.75rem;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 2px solid var(--border-light);
+  animation: fadeInUp 0.25s ease-out;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.image-preview {
+  display: block;
+  max-width: 100%;
+  max-height: 220px;
+  object-fit: contain;
+  background: var(--bg-secondary);
+}
+
+.image-preview-remove {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 0.85rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition);
+  line-height: 1;
+}
+
+.image-preview-remove:hover {
+  background: var(--danger);
+}
