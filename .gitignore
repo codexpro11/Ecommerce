@@ -1,8 +1,15 @@
-HELP.md
 target/
 .mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+
+### Secrets ###
+.env
+.env.*
+
+### AI assistant config ###
+.ai/
+.junie/
 
 ### STS ###
 .apt_generated

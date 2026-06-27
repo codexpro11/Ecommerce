@@ -1,8 +1,0 @@
-{
-    "build": {
-        "cmd": "cd productSite && ./mvnw clean package -DskipTests"
-    },
-    "start": {
-        "cmd": "java -jar productSite/target/productSite-0.0.1-SNAPSHOT.jar"
-    }
-}

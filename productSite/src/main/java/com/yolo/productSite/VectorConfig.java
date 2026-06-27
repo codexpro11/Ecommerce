@@ -2,7 +2,6 @@ package com.yolo.productSite;
 
 import io.qdrant.client.QdrantClient;
 import io.qdrant.client.QdrantGrpcClient;
-import io.qdrant.client.grpc.Collections;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.ai.embedding.EmbeddingModel;
 import org.springframework.ai.vectorstore.VectorStore;
