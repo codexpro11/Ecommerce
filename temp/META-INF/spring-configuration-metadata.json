@@ -1,0 +1,269 @@
+{
+  "groups": [
+    {
+      "name": "spring.ai.google.genai",
+      "type": "org.springframework.ai.model.google.genai.autoconfigure.chat.GoogleGenAiConnectionProperties",
+      "sourceType": "org.springframework.ai.model.google.genai.autoconfigure.chat.GoogleGenAiConnectionProperties"
+    },
+    {
+      "name": "spring.ai.google.genai.chat",
+      "type": "org.springframework.ai.model.google.genai.autoconfigure.chat.GoogleGenAiChatProperties",
+      "sourceType": "org.springframework.ai.model.google.genai.autoconfigure.chat.GoogleGenAiChatProperties"
+    },
+    {
+      "name": "spring.ai.google.genai.chat.options",
+      "type": "org.springframework.ai.google.genai.GoogleGenAiChatOptions",
+      "sourceType": "org.springframework.ai.model.google.genai.autoconfigure.chat.GoogleGenAiChatProperties",
+      "sourceMethod": "getOptions()"
+    },
+    {
+      "name": "spring.ai.google.genai.embedding",
+      "type": "org.springframework.ai.model.google.genai.autoconfigure.embedding.GoogleGenAiEmbeddingConnectionProperties",
+      "sourceType": "org.springframework.ai.model.google.genai.autoconfigure.embedding.GoogleGenAiEmbeddingConnectionProperties"
+    },
+    {
+      "name": "spring.ai.google.genai.embedding.text",
+      "type": "org.springframework.ai.model.google.genai.autoconfigure.embedding.GoogleGenAiTextEmbeddingProperties",
+      "sourceType": "org.springframework.ai.model.google.genai.autoconfigure.embedding.GoogleGenAiTextEmbeddingProperties"
+    },
+    {
+      "name": "spring.ai.google.genai.embedding.text.options",
+      "type": "org.springframework.ai.google.genai.text.GoogleGenAiTextEmbeddingOptions",
+      "sourceType": "org.springframework.ai.model.google.genai.autoconfigure.embedding.GoogleGenAiTextEmbeddingProperties",
+      "sourceMethod": "getOptions()"
+    }
+  ],
+  "properties": [
+    {
+      "name": "spring.ai.google.genai.api-key",
+      "type": "java.lang.String",
+      "description": "Google GenAI API Key (for Gemini Developer API mode).",
+      "sourceType": "org.springframework.ai.model.google.genai.autoconfigure.chat.GoogleGenAiConnectionProperties"
+    },
+    {
+      "name": "spring.ai.google.genai.chat.options.auto-cache-threshold",
+      "type": "java.lang.Integer",
+      "sourceType": "org.springframework.ai.google.genai.GoogleGenAiChatOptions"
+    },
+    {
+      "name": "spring.ai.google.genai.chat.options.auto-cache-ttl",
+      "type": "java.time.Duration",
+      "sourceType": "org.springframework.ai.google.genai.GoogleGenAiChatOptions"
+    },
+    {
+      "name": "spring.ai.google.genai.chat.options.cached-content-name",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.ai.google.genai.GoogleGenAiChatOptions"
+    },
+    {
+      "name": "spring.ai.google.genai.chat.options.candidate-count",
+      "type": "java.lang.Integer",
+      "sourceType": "org.springframework.ai.google.genai.GoogleGenAiChatOptions"
+    },
+    {
+      "name": "spring.ai.google.genai.chat.options.frequency-penalty",
+      "type": "java.lang.Double",
+      "sourceType": "org.springframework.ai.google.genai.GoogleGenAiChatOptions"
+    },
+    {
+      "name": "spring.ai.google.genai.chat.options.google-search-retrieval",
+      "type": "java.lang.Boolean",
+      "sourceType": "org.springframework.ai.google.genai.GoogleGenAiChatOptions"
+    },
+    {
+      "name": "spring.ai.google.genai.chat.options.include-extended-usage-metadata",
+      "type": "java.lang.Boolean",
+      "sourceType": "org.springframework.ai.google.genai.GoogleGenAiChatOptions"
+    },
+    {
+      "name": "spring.ai.google.genai.chat.options.include-thoughts",
+      "type": "java.lang.Boolean",
+      "sourceType": "org.springframework.ai.google.genai.GoogleGenAiChatOptions"
+    },
+    {
+      "name": "spring.ai.google.genai.chat.options.internal-tool-execution-enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "org.springframework.ai.google.genai.GoogleGenAiChatOptions"
+    },
+    {
+      "name": "spring.ai.google.genai.chat.options.labels",
+      "type": "java.util.Map<java.lang.String,java.lang.String>",
+      "sourceType": "org.springframework.ai.google.genai.GoogleGenAiChatOptions"
+    },
+    {
+      "name": "spring.ai.google.genai.chat.options.max-output-tokens",
+      "type": "java.lang.Integer",
+      "sourceType": "org.springframework.ai.google.genai.GoogleGenAiChatOptions"
+    },
+    {
+      "name": "spring.ai.google.genai.chat.options.max-tokens",
+      "type": "java.lang.Integer",
+      "sourceType": "org.springframework.ai.google.genai.GoogleGenAiChatOptions"
+    },
+    {
+      "name": "spring.ai.google.genai.chat.options.model",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.ai.google.genai.GoogleGenAiChatOptions"
+    },
+    {
+      "name": "spring.ai.google.genai.chat.options.output-schema",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.ai.google.genai.GoogleGenAiChatOptions"
+    },
+    {
+      "name": "spring.ai.google.genai.chat.options.presence-penalty",
+      "type": "java.lang.Double",
+      "sourceType": "org.springframework.ai.google.genai.GoogleGenAiChatOptions"
+    },
+    {
+      "name": "spring.ai.google.genai.chat.options.response-mime-type",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.ai.google.genai.GoogleGenAiChatOptions"
+    },
+    {
+      "name": "spring.ai.google.genai.chat.options.response-schema",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.ai.google.genai.GoogleGenAiChatOptions"
+    },
+    {
+      "name": "spring.ai.google.genai.chat.options.safety-settings",
+      "type": "java.util.List<org.springframework.ai.google.genai.common.GoogleGenAiSafetySetting>",
+      "sourceType": "org.springframework.ai.google.genai.GoogleGenAiChatOptions"
+    },
+    {
+      "name": "spring.ai.google.genai.chat.options.stop-sequences",
+      "type": "java.util.List<java.lang.String>",
+      "sourceType": "org.springframework.ai.google.genai.GoogleGenAiChatOptions"
+    },
+    {
+      "name": "spring.ai.google.genai.chat.options.temperature",
+      "type": "java.lang.Double",
+      "sourceType": "org.springframework.ai.google.genai.GoogleGenAiChatOptions"
+    },
+    {
+      "name": "spring.ai.google.genai.chat.options.thinking-budget",
+      "type": "java.lang.Integer",
+      "sourceType": "org.springframework.ai.google.genai.GoogleGenAiChatOptions"
+    },
+    {
+      "name": "spring.ai.google.genai.chat.options.thinking-level",
+      "type": "org.springframework.ai.google.genai.common.GoogleGenAiThinkingLevel",
+      "sourceType": "org.springframework.ai.google.genai.GoogleGenAiChatOptions"
+    },
+    {
+      "name": "spring.ai.google.genai.chat.options.tool-callbacks",
+      "type": "java.util.List<org.springframework.ai.tool.ToolCallback>",
+      "sourceType": "org.springframework.ai.google.genai.GoogleGenAiChatOptions"
+    },
+    {
+      "name": "spring.ai.google.genai.chat.options.tool-context",
+      "type": "java.util.Map<java.lang.String,java.lang.Object>",
+      "sourceType": "org.springframework.ai.google.genai.GoogleGenAiChatOptions"
+    },
+    {
+      "name": "spring.ai.google.genai.chat.options.tool-names",
+      "type": "java.util.Set<java.lang.String>",
+      "sourceType": "org.springframework.ai.google.genai.GoogleGenAiChatOptions"
+    },
+    {
+      "name": "spring.ai.google.genai.chat.options.top-k",
+      "type": "java.lang.Integer",
+      "sourceType": "org.springframework.ai.google.genai.GoogleGenAiChatOptions"
+    },
+    {
+      "name": "spring.ai.google.genai.chat.options.top-p",
+      "type": "java.lang.Double",
+      "sourceType": "org.springframework.ai.google.genai.GoogleGenAiChatOptions"
+    },
+    {
+      "name": "spring.ai.google.genai.chat.options.use-cached-content",
+      "type": "java.lang.Boolean",
+      "sourceType": "org.springframework.ai.google.genai.GoogleGenAiChatOptions"
+    },
+    {
+      "name": "spring.ai.google.genai.credentials-uri",
+      "type": "org.springframework.core.io.Resource",
+      "description": "URI to Google Cloud credentials (optional, for Vertex AI mode).",
+      "sourceType": "org.springframework.ai.model.google.genai.autoconfigure.chat.GoogleGenAiConnectionProperties"
+    },
+    {
+      "name": "spring.ai.google.genai.embedding.api-key",
+      "type": "java.lang.String",
+      "description": "Google GenAI API Key (for Gemini Developer API mode).",
+      "sourceType": "org.springframework.ai.model.google.genai.autoconfigure.embedding.GoogleGenAiEmbeddingConnectionProperties"
+    },
+    {
+      "name": "spring.ai.google.genai.embedding.credentials-uri",
+      "type": "org.springframework.core.io.Resource",
+      "description": "URI to Google Cloud credentials (optional, for Vertex AI mode).",
+      "sourceType": "org.springframework.ai.model.google.genai.autoconfigure.embedding.GoogleGenAiEmbeddingConnectionProperties"
+    },
+    {
+      "name": "spring.ai.google.genai.embedding.location",
+      "type": "java.lang.String",
+      "description": "Google Cloud location (for Vertex AI mode).",
+      "sourceType": "org.springframework.ai.model.google.genai.autoconfigure.embedding.GoogleGenAiEmbeddingConnectionProperties"
+    },
+    {
+      "name": "spring.ai.google.genai.embedding.project-id",
+      "type": "java.lang.String",
+      "description": "Google Cloud project ID (for Vertex AI mode).",
+      "sourceType": "org.springframework.ai.model.google.genai.autoconfigure.embedding.GoogleGenAiEmbeddingConnectionProperties"
+    },
+    {
+      "name": "spring.ai.google.genai.embedding.text.options.auto-truncate",
+      "type": "java.lang.Boolean",
+      "sourceType": "org.springframework.ai.google.genai.text.GoogleGenAiTextEmbeddingOptions"
+    },
+    {
+      "name": "spring.ai.google.genai.embedding.text.options.dimensions",
+      "type": "java.lang.Integer",
+      "sourceType": "org.springframework.ai.google.genai.text.GoogleGenAiTextEmbeddingOptions"
+    },
+    {
+      "name": "spring.ai.google.genai.embedding.text.options.model",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.ai.google.genai.text.GoogleGenAiTextEmbeddingOptions"
+    },
+    {
+      "name": "spring.ai.google.genai.embedding.text.options.task-type",
+      "type": "org.springframework.ai.google.genai.text.GoogleGenAiTextEmbeddingOptions$TaskType",
+      "sourceType": "org.springframework.ai.google.genai.text.GoogleGenAiTextEmbeddingOptions"
+    },
+    {
+      "name": "spring.ai.google.genai.embedding.text.options.title",
+      "type": "java.lang.String",
+      "sourceType": "org.springframework.ai.google.genai.text.GoogleGenAiTextEmbeddingOptions"
+    },
+    {
+      "name": "spring.ai.google.genai.embedding.vertex-ai",
+      "type": "java.lang.Boolean",
+      "description": "Whether to use Vertex AI mode. If false, uses Gemini Developer API mode. This is automatically determined based on whether apiKey or projectId is set.",
+      "sourceType": "org.springframework.ai.model.google.genai.autoconfigure.embedding.GoogleGenAiEmbeddingConnectionProperties",
+      "defaultValue": false
+    },
+    {
+      "name": "spring.ai.google.genai.location",
+      "type": "java.lang.String",
+      "description": "Google Cloud location (for Vertex AI mode).",
+      "sourceType": "org.springframework.ai.model.google.genai.autoconfigure.chat.GoogleGenAiConnectionProperties"
+    },
+    {
+      "name": "spring.ai.google.genai.project-id",
+      "type": "java.lang.String",
+      "description": "Google Cloud project ID (for Vertex AI mode).",
+      "sourceType": "org.springframework.ai.model.google.genai.autoconfigure.chat.GoogleGenAiConnectionProperties"
+    },
+    {
+      "name": "spring.ai.google.genai.vertex-ai",
+      "type": "java.lang.Boolean",
+      "description": "Whether to use Vertex AI mode. If false, uses Gemini Developer API mode. This is automatically determined based on whether apiKey or projectId is set.",
+      "sourceType": "org.springframework.ai.model.google.genai.autoconfigure.chat.GoogleGenAiConnectionProperties",
+      "defaultValue": false
+    }
+  ],
+  "hints": [],
+  "ignored": {
+    "properties": []
+  }
+}

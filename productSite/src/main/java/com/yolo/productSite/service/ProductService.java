@@ -66,6 +66,13 @@ public class ProductService {
 
     // ai for description
     public String Description(String productName, String category) {
+        // chatClient is null when no ChatModel bean is available (GOOGLE_API_KEY
+        // missing/invalid) — see AI_config.chatClient(). Fail this one request
+        // cleanly instead of throwing an NPE / crashing the app.
+        if (chatClient == null) {
+            throw new RuntimeException(
+                    "AI description generation is currently unavailable (GOOGLE_API_KEY not configured).");
+        }
         String prompt = String.format("""
                 Give a short and engaging product description for an e-commerce website.
                 Product Name: %s
@@ -94,6 +101,11 @@ public class ProductService {
     }
 
     public product generateProduct(String query) {
+        // Same guard as Description() above.
+        if (chatClient == null) {
+            throw new RuntimeException(
+                    "AI product generation is currently unavailable (GOOGLE_API_KEY not configured).");
+        }
         String prompt = String.format("""
                 Generate a product based on this description: %s
                 Return ONLY the JSON matching this structure:

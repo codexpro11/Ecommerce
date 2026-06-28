@@ -130,13 +130,28 @@ YOUR RESPONSE
                 .builder()
                 .template(ragPrompt)
                 .build();
-        this.chatClient = builder
-                .defaultAdvisors(MessageChatMemoryAdvisor.builder(chatMemory).build())
-                .build();
+
+        // builder is null when no ChatModel bean is available (GOOGLE_API_KEY
+        // missing/invalid) — see AI_config.chatClientBuilder(). Guard against it
+        // so a missing key disables the chatbot instead of crashing the whole app.
+        if (builder != null) {
+            this.chatClient = builder
+                    .defaultAdvisors(MessageChatMemoryAdvisor.builder(chatMemory).build())
+                    .build();
+        } else {
+            this.chatClient = null;
+            System.err.println(">>> [ChatService] No ChatClient.Builder available " +
+                    "(GOOGLE_API_KEY missing/invalid). Chatbot will return a fallback message " +
+                    "until this is configured.");
+        }
     }
 
     public String getBotResponse(String userQuery)
     {
+        if (chatClient == null) {
+            return "Sorry, the chat assistant is temporarily unavailable. Please try again later.";
+        }
+
         // Extract a clean search keyword from conversational queries
         // e.g. "i want to buy iphone" → "iphone"
         // e.g. "show me samsung phones" → "samsung phones"
