@@ -14,7 +14,6 @@ import org.springframework.util.StringUtils;
 @Configuration
 @Profile("!test")
 public class VectorConfig {
-    private static final int VECTOR_SIZE = 768;
 
     @Value("${spring.ai.vectorstore.qdrant.host:localhost}")
     private String host;
@@ -22,17 +21,39 @@ public class VectorConfig {
     @Value("${spring.ai.vectorstore.qdrant.port:6334}")
     private int port;
 
-    @Value("${spring.ai.vectorstore.qdrant.use-tls:false}")
+    @Value("${spring.ai.vectorstore.qdrant.use-tls:true}")
     private boolean useTls;
 
     @Value("${spring.ai.vectorstore.qdrant.api-key:}")
     private String apiKey;
 
+    @Value("${spring.ai.vectorstore.qdrant.url:}")
+    private String url;
+
     @Bean
     public QdrantClient qdrantClient() {
+        String finalHost = host;
+        int finalPort = port;
+
+        // If a URL was provided (e.g. QDRANT_URL in Render) but HOST was not, extract the host from the URL.
+        if (StringUtils.hasText(url) && "localhost".equals(host)) {
+            String parsedUrl = url.replace("https://", "").replace("http://", "");
+            if (parsedUrl.contains(":")) {
+                String[] parts = parsedUrl.split(":");
+                finalHost = parts[0];
+                try {
+                    finalPort = Integer.parseInt(parts[1]);
+                } catch(NumberFormatException ignored) {}
+            } else {
+                finalHost = parsedUrl;
+            }
+        }
+
+        System.out.println(">>> [VectorConfig] Connecting to Qdrant at " + finalHost + ":" + finalPort + " (TLS=" + useTls + ")");
+
         QdrantGrpcClient.Builder grpcClientBuilder = QdrantGrpcClient.newBuilder(
-                host,
-                port,
+                finalHost,
+                finalPort,
                 useTls);
         
         if (StringUtils.hasText(apiKey)) {
