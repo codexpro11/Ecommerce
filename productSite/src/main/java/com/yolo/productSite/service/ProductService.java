@@ -23,8 +23,7 @@ public class ProductService {
     @Autowired
     private final Productrepo productRepo;
 
-    @Autowired
-    private ChatClient chatClient;
+    private final ChatClient chatClient;
 
     @Autowired
     private AiImageService aiImageService;
@@ -32,9 +31,9 @@ public class ProductService {
     private VectorStore vectorStore;
 
     @Autowired
-    public ProductService(Productrepo productRepo, ChatClient chatClient, AiImageService aiImageService, VectorStore vectorStore) {
+    public ProductService(Productrepo productRepo, org.springframework.beans.factory.ObjectProvider<ChatClient> chatClientProvider, AiImageService aiImageService, VectorStore vectorStore) {
         this.productRepo = productRepo;
-        this.chatClient = chatClient;
+        this.chatClient = chatClientProvider.getIfAvailable();
         this.aiImageService = aiImageService;
         this.vectorStore = vectorStore;
     }

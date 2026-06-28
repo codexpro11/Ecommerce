@@ -26,8 +26,9 @@ public class ChatService
     private final VectorStore vectorStore;
 
 
-    public ChatService(ChatClient.Builder builder, ChatMemory chatMemory,VectorStore vectorStore)
+    public ChatService(org.springframework.beans.factory.ObjectProvider<ChatClient.Builder> builderProvider, ChatMemory chatMemory, VectorStore vectorStore)
     {
+        ChatClient.Builder builder = builderProvider.getIfAvailable();
         this.vectorStore=vectorStore;
 
         String ragPrompt = """
