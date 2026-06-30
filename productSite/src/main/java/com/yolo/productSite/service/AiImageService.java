@@ -19,7 +19,7 @@ public class AiImageService {
 
     public byte[] generateImage(String imagePrompt) {
         StabilityAiImageOptions Options = StabilityAiImageOptions
-                .builder()
+                .builder().model("core")
                 .N(1)
                 // .responseFormat("url") // URL often fails or returns null for SDXL in some
                 // contexts

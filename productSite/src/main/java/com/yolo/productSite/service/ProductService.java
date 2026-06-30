@@ -134,7 +134,30 @@ public class ProductService {
         // 2. Prepare data for Qdrant (Search Index)
         // Create a rich text representation for better embeddings
         String contentToEmbed = String.format(
-                "Product: %s, Brand: %s, Category: %s, Description: %s, Price: %.2f",
+                """
+            [Products]
+             %s,
+             [Brand] %s
+             , [Category]
+              %s,
+              [ Description]
+                %s,
+            [Price] 
+            %.2f
+                 [recommendations]
+    %s
+    
+    [policies]
+    %s
+                """
+                        
+                        ,
+
+
+
+
+
+
                 savedProduct.getProductName(),
                 savedProduct.getBrand() != null ? savedProduct.getBrand() : "",
                 savedProduct.getCategory() != null ? savedProduct.getCategory() : "",

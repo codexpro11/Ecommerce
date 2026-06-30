@@ -26,7 +26,7 @@ public class SearchController
     // Endpoint to search (Queries Qdrant)
     @GetMapping("/search-results")
     public List<product> search(@RequestParam String query) {
-        return productService.SyncAllProductsToVectorStore();
+        return productService.searchProducts(query);
     }
     @PostMapping("/sync")
     public String sync()
