@@ -87,8 +87,20 @@ public class productcontroller {
 
     @GetMapping("/product/search")
     public ResponseEntity<List<product>> searchProducts(@RequestParam String keyword) {
-        return ResponseEntity.ok(
-                productService.findByProductNameContaining(keyword));
+        try {
+            // enhancedSearch: tries vector search first, falls back to keyword search
+            List<product> results = productService.enhancedSearch(keyword);
+            return ResponseEntity.ok(results);
+        } catch (Exception vectorEx) {
+            System.err.println(">>> [Search] enhancedSearch failed (" + vectorEx.getMessage() + "), falling back to keyword search");
+            try {
+                // Pure DB keyword search as last resort
+                return ResponseEntity.ok(productService.findByProductNameContaining(keyword));
+            } catch (Exception dbEx) {
+                System.err.println(">>> [Search] keyword search also failed: " + dbEx.getMessage());
+                return ResponseEntity.ok(List.of()); // Never return 500 — return empty list
+            }
+        }
     }
 
     // adding product in json format
