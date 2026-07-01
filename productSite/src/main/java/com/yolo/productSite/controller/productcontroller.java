@@ -96,7 +96,7 @@ public class productcontroller {
         return new ResponseEntity<>(savedProducts, HttpStatus.OK);
     }
 
-    @PostMapping("/product/generate-description")
+    @GetMapping("/product/generate-description")
     public ResponseEntity<String> generateDescription(@RequestParam String productName, @RequestParam String category) {
         try {
             String AIDesc = productService.Description(productName, category);
@@ -106,7 +106,7 @@ public class productcontroller {
         }
     }
 
-    @PostMapping("/product/generate-image")
+    @GetMapping("/product/generate-image")
     public ResponseEntity<?> generateImage(@RequestParam String productName, @RequestParam String description,
             @RequestParam String category) {
         try {
