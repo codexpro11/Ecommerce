@@ -142,7 +142,9 @@ public class ProductService {
                 (double) savedProduct.getPrice()
         );
 
+        // Use stable ID so repeated adds act as upserts, preventing duplicates in Qdrant
         Document document = new Document(
+                "product-" + savedProduct.getId(),
                 contentToEmbed,
                 Map.of(
                         "type", "product",
@@ -173,22 +175,21 @@ public class ProductService {
 
         List<Document> documents = vectorStore.similaritySearch(searchRequest);
 
-        // Convert Documents back to product objects
-        return documents.stream()
-                .map(doc -> {
-                    String productIdStr = (String) doc.getMetadata().get("product_id");
-                    if (productIdStr != null) {
-                        try {
-                            int productId = Integer.parseInt(productIdStr);
-                            return productRepo.findById(productId).orElse(null);
-                        } catch (NumberFormatException e) {
-                            return null;
-                        }
+        // Convert Documents back to product objects, deduplicated by product ID
+        // (Qdrant may contain old duplicate entries from repeated syncs before stable IDs were used)
+        Map<Integer, product> seen = new java.util.LinkedHashMap<>();
+        documents.forEach(doc -> {
+            String productIdStr = (String) doc.getMetadata().get("product_id");
+            if (productIdStr != null) {
+                try {
+                    int productId = Integer.parseInt(productIdStr);
+                    if (!seen.containsKey(productId)) {
+                        productRepo.findById(productId).ifPresent(p -> seen.put(productId, p));
                     }
-                    return null;
-                })
-                .filter(p -> p != null)
-                .collect(Collectors.toList());
+                } catch (NumberFormatException ignored) {}
+            }
+        });
+        return new java.util.ArrayList<>(seen.values());
     }
 
     // Auto-sync all products into Qdrant on every app startup
@@ -218,14 +219,17 @@ public class ProductService {
                     (double) p.getPrice(),
                     p.getStockQuantity(),
                     p.isProductAvailable() ? "Yes" : "No");
-            return new Document(contentToEmbed, Map.of(
-                    "type", "product",
-                    "product_id", String.valueOf(p.getId()),
-                    "name", p.getProductName(),
-                    "brand", p.getBrand() != null ? p.getBrand() : "",
-                    "category", p.getCategory() != null ? p.getCategory() : "",
-                    "price", String.valueOf(p.getPrice())
-            ));
+            return new Document(
+                    "product-" + p.getId(),  // stable ID → upsert, no duplicates
+                    contentToEmbed,
+                    Map.of(
+                            "type", "product",
+                            "product_id", String.valueOf(p.getId()),
+                            "name", p.getProductName(),
+                            "brand", p.getBrand() != null ? p.getBrand() : "",
+                            "category", p.getCategory() != null ? p.getCategory() : "",
+                            "price", String.valueOf(p.getPrice())
+                    ));
         }).collect(Collectors.toList());
         vectorStore.add(documents);
         return allProducts;
@@ -297,6 +301,7 @@ public class ProductService {
                     );
 
                     return new Document(
+                            "product-" + p.getId(),  // stable ID → upsert, no duplicates
                             contentToEmbed,
                             Map.of(
                                     "type", "product",
