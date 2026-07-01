@@ -53,11 +53,13 @@ public class productcontroller {
     public ResponseEntity<byte[]> getImage(@PathVariable int id) {
         product p = productService.getProductById(id);
 
-        if (p == null || p.getImageData() == null) {
-            return ResponseEntity.notFound().build();
+        if (p == null || p.getImageData() == null || p.getImageData().length == 0) {
+            return ResponseEntity.noContent().build(); // 204 – no image stored; avoids browser error + React infinite re-render
         }
+
+        String contentType = p.getImageType() != null ? p.getImageType() : "image/jpeg";
         return ResponseEntity.ok()
-                .contentType(MediaType.valueOf(p.getImageType()))
+                .contentType(MediaType.valueOf(contentType))
                 .body(p.getImageData());
     }
 
